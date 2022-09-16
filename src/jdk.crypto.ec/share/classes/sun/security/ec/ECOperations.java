@@ -57,12 +57,14 @@ public class ECOperations {
 
     static final Map<BigInteger, IntegerFieldModuloP> fields = Map.of(
         IntegerPolynomialP256.MODULUS, IntegerPolynomialP256.ONE,
+        IntegerPolynomialSM2P256.MODULUS, IntegerPolynomialSM2P256.ONE,
         IntegerPolynomialP384.MODULUS, IntegerPolynomialP384.ONE,
         IntegerPolynomialP521.MODULUS, IntegerPolynomialP521.ONE
     );
 
     static final Map<BigInteger, IntegerFieldModuloP> orderFields = Map.of(
         P256OrderField.MODULUS, P256OrderField.ONE,
+        SM2P256OrderField.MODULUS, SM2P256OrderField.ONE,
         P384OrderField.MODULUS, P384OrderField.ONE,
         P521OrderField.MODULUS, P521OrderField.ONE
     );
@@ -151,7 +153,7 @@ public class ECOperations {
         // and throw IntermediateValueException in the (unlikely) event
         // that the result is 0.
 
-        // Get 64 extra bits and reduce into the nonce
+        // Get 64 extra bits and reduce in to the nonce
         int seedBits = orderField.getSize().bitLength() + 64;
         if (seedBytes.length * 8 < seedBits) {
             throw new ProviderException("Incorrect seed length: " +
@@ -490,4 +492,3 @@ public class ECOperations {
 
     }
 }
-
