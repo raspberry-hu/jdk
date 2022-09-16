@@ -65,8 +65,10 @@ public abstract sealed class IntegerPolynomial implements IntegerFieldModuloP
     permits IntegerPolynomial1305, IntegerPolynomial25519,
             IntegerPolynomial448, IntegerPolynomialP256,
             IntegerPolynomialP384, IntegerPolynomialP521,
+            IntegerPolynomialSM2P256,
             IntegerPolynomialModBinP, P256OrderField,
             P384OrderField, P521OrderField,
+            SM2P256OrderField,
             Curve25519OrderField,
             Curve448OrderField {
 
